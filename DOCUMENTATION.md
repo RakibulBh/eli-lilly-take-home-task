@@ -27,10 +27,33 @@ Protocols used:
 
 _For the challenge objectives, did you do anything in a particular way that you want to discuss? Is there anything you're particularly proud of that you want to highlight? Did you attempt some objectives multiple times, or go back and re-write particular sections of code? If so, why? Use this space to document any key points you'd like to tell us about._
 
+I have use Next.js, React.js, TailwindCSS which are all frameworks used to help me develop the applicatiom much faster, giving me more type to solve the problem and time saved on development, re usable components in react allow me to not use diplicated code and keep things as efficient as possible by creating components which could be re-used for various different use cases.
+
+I am very proud of my search function, it uses the .filter() javascript method to filter out the data and keep only data which matches the search query, i used the useeffect hook to make it a real-time search too.
+
 ## Problems Faced
 
 _Use this space to document and discuss any issues you faced while undertaking this challenge and how you solved them. We recommend doing this proactively as you experience and resolve the issues - make sure you don't forget! (Screenshots are helpful, though not required)_.
 
+./start.sh did not work on my device as mentioned in the README, therefore I had a look at the file and see what commands were being ran, so I just ran them individually on my terminal fixing the issue.
+
+Error updating medicine data -> When I sent items to the backend to update an item It always gave me an error from the backend 'OPTIONS /medicines/update HTTP/1.1" 200 OK
+INFO: 127.0.0.1:59916 - "POST /medicines/update HTTP/1.1" 405 Method Not Allowed", so I had a look at the backend and realised that I am sending JSON data and they expect form data as mentioned under the function as a comment, so i converted my data to formdata before sending it to the backend rather than JSON and it worked.
+
+Medicine name not updating -> Although I am able to update the price and the changes do take place, I cannot do the same for the name. I realised that this is because the name is used to index what to update, only the price is updatable.
+
+useEffect(() => {
+sortAsc
+? setFilteredMedicines(medicines.sort((a, b) => a.price - b.price))
+: setFilteredMedicines(medicines.sort((a, b) => b.price - a.price));
+}, [sortAsc]);
+
+^^^ I had an bug where the filter and sort did not work at the same time, but I realised that I was always sorting based on the original data 'medicines' rather than the filtered data 'FilteredMedicines'
+
 ## Evaluation
 
 _How did you feel about the challenge overall? Did some parts go better than others? Did you run out of time? If you were to do this again, and were given more time, what would you do differently?_
+
+I feel like I did great, I tried my best to list out as many use cases as possible and handle any potential errors that could occur like entering a wrong data type for form data, entering null or empty values, requests failing, error handling is essential to keep any app running and keep a smooth experience for the user, however I would say that the sort/filter functions definitely took much longer than rendering the UI.
+
+If I had more time I would focus more on the styling, especially the responsiveness of the application so it can be used in any device and still having the ui looking great. A lot of the time I had to fetch the same data multiple times which is quite inefficient, to fix this I would use a state mangement library to have a state that any component would have access to, this would reduce "prop drilling" which can make my components confusing and harder to track.In addition, the prupose of React is to create re-usable components that have one specific function, however some of my components have multi-purpose I'd say, so I would definitely refactor some code.

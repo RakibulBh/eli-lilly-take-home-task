@@ -3,8 +3,15 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import MedicineComponent from "./medicine-component";
 import { Medicine } from "@/types";
+import EditMedicineDialog from "./edit-medicine-dialog";
 
-const MedicineContainer = ({ searchTerm }: { searchTerm: string }) => {
+const MedicineContainer = ({
+  searchTerm,
+  sortAsc,
+}: {
+  searchTerm: string;
+  sortAsc: boolean;
+}) => {
   const [medicines, setMedicines] = useState<Medicine[]>([]);
   const [filteredMedicines, setFilteredMedicines] = useState<Medicine[]>([]);
 
@@ -26,15 +33,21 @@ const MedicineContainer = ({ searchTerm }: { searchTerm: string }) => {
     );
   }, [searchTerm]);
 
+  useEffect(() => {
+    sortAsc
+      ? setFilteredMedicines(
+          filteredMedicines.sort((a, b) => a.price - b.price)
+        )
+      : setFilteredMedicines(
+          filteredMedicines.sort((a, b) => b.price - a.price)
+        );
+  }, [sortAsc]);
+
   return (
     <div className="grid grid-cols-3 gap-2 max-h-64 overflow-y-auto">
       {filteredMedicines &&
-        filteredMedicines.map((medicine) => (
-          <MedicineComponent
-            key={medicine.name}
-            name={medicine.name}
-            price={medicine.price}
-          />
+        filteredMedicines.map((medicine: Medicine) => (
+          <EditMedicineDialog key={medicine.name} medicine={medicine} />
         ))}
     </div>
   );

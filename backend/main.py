@@ -92,6 +92,7 @@ def update_med(name: str = Form(...), price: float = Form(...)):
     Returns:
         dict: A message confirming the medicine was updated successfully.
     """
+    print(name)
     with open('data.json', 'r+') as meds:
         current_db = json.load(meds)
         for med in current_db["medicines"]:
