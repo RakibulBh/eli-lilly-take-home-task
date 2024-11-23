@@ -50,6 +50,8 @@ sortAsc
 
 ^^^ I had an bug where the filter and sort did not work at the same time, but I realised that I was always sorting based on the original data 'medicines' rather than the filtered data 'FilteredMedicines'
 
+During my development process I was using the 'frontend/design' branch as my main branch and always pushing code to it which is bad practice as code may cause erros on the main branch, I only realised much later that I did not have a main as my pushes directly pushed onto the branch without any pull requests. To fix this i created a main branch set it as the origin and then began working on different branches and creating pull requests to the main branch, although this is a small project I like to get into the industry standards habit.
+
 ## Evaluation
 
 _How did you feel about the challenge overall? Did some parts go better than others? Did you run out of time? If you were to do this again, and were given more time, what would you do differently?_
