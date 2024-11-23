@@ -16,6 +16,13 @@ The key objective here is to display the data in a "user friendly" way, which me
 
 Going to be working in a professional manner using pull requests, and git industry standard protocols.
 
+Protocols used:
+
+- feat: New feature
+- fix: Bug fix
+- docs: Documentation
+- style: Formatting
+
 ## Objectives - Innovative Solutions
 
 _For the challenge objectives, did you do anything in a particular way that you want to discuss? Is there anything you're particularly proud of that you want to highlight? Did you attempt some objectives multiple times, or go back and re-write particular sections of code? If so, why? Use this space to document any key points you'd like to tell us about._
