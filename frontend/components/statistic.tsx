@@ -1,6 +1,12 @@
 import React from "react";
 
-const Statistic = ({ value, desc }: { value: string; desc: string }) => {
+const Statistic = ({
+  value,
+  desc,
+}: {
+  value: string | number;
+  desc: string;
+}) => {
   return (
     <div className="w-48 rounded-xl p-4 bg-[#901615] flex items-center justify-center">
       <div className="space-y-2 text-center text-white">
