@@ -14,9 +14,9 @@ The key objective here is to display the data in a "user friendly" way, which me
 4. Create forms and funcitonality to send data to the backend.
 5. Handle missing data in a user friendly way.
 
-Going to be working in a professional manner using pull requests, and git industry standard protocols.
+Going to be working in a professional manner using pull requests, and git industry standard protocols for commits.
 
-Protocols used:
+Commit protocols used:
 
 - feat: New feature
 - fix: Bug fix
@@ -31,9 +31,13 @@ I have use Next.js, React.js, TailwindCSS which are all frameworks used to help 
 
 I am very proud of my search function, it uses the .filter() javascript method to filter out the data and keep only data which matches the search query, i used the useeffect hook to make it a real-time search too.
 
-## Problems Faced
+Using Shadcn (Component library) enabled me to save lots of time on designing UI, why re invent the wheel?
 
-_Use this space to document and discuss any issues you faced while undertaking this challenge and how you solved them. We recommend doing this proactively as you experience and resolve the issues - make sure you don't forget! (Screenshots are helpful, though not required)_.
+I am most proud of my filter/sort functions as this will majorly help with visualising the data to the user's liking, they can also sort based on filtered data!
+
+I loved working on the backend, although I had not worked on a python backend before, after having gone through the backend, I was conifdent enough to develop the GetAverage API, and I had done it on the first go!
+
+## Problems Faced
 
 ./start.sh did not work on my device as mentioned in the README, therefore I had a look at the file and see what commands were being ran, so I just ran them individually on my terminal fixing the issue.
 
@@ -50,7 +54,9 @@ sortAsc
 
 ^^^ I had an bug where the filter and sort did not work at the same time, but I realised that I was always sorting based on the original data 'medicines' rather than the filtered data 'FilteredMedicines'
 
-During my development process I was using the 'frontend/design' branch as my main branch and always pushing code to it which is bad practice as code may cause erros on the main branch, I only realised much later that I did not have a main as my pushes directly pushed onto the branch without any pull requests. To fix this i created a main branch set it as the origin and then began working on different branches and creating pull requests to the main branch, although this is a small project I like to get into the industry standards habit.
+During my development process I was using the 'frontend/design' branch as my main branch and always pushing code to it which is bad practice as code may cause erros on the main branch, I only realised much later that I did not have a main as my pushes directly pushed onto the branch without any pull requests. To fix this i created a main branch set it as the default branch (I googled how to do this), then I began working on different branches and creating pull requests to the main branch, although this is a small project I like to get into the industry standards habit.
+
+When adding a medicine and submitting, the page does not refresh and dialog does not close and no messages are shown to the user that a medicine has been created. To fix this I just have to use more states.
 
 ## Evaluation
 
@@ -59,3 +65,5 @@ _How did you feel about the challenge overall? Did some parts go better than oth
 I feel like I did great, I tried my best to list out as many use cases as possible and handle any potential errors that could occur like entering a wrong data type for form data, entering null or empty values, requests failing, error handling is essential to keep any app running and keep a smooth experience for the user, however I would say that the sort/filter functions definitely took much longer than rendering the UI.
 
 If I had more time I would focus more on the styling, especially the responsiveness of the application so it can be used in any device and still having the ui looking great. A lot of the time I had to fetch the same data multiple times which is quite inefficient, to fix this I would use a state mangement library to have a state that any component would have access to, this would reduce "prop drilling" which can make my components confusing and harder to track.In addition, the prupose of React is to create re-usable components that have one specific function, however some of my components have multi-purpose I'd say, so I would definitely refactor some code.
+
+There are a lot of opporutnities to make this application as efficient as possible one use case would not rendering the dialog component for each medicine, but only render it once if a medicine has been clicked and pass the medicine data on the dialog, I would definitely spend more time making my code efficient, readable and maintainable and adding comments.
