@@ -1,12 +1,13 @@
 import React from "react";
 import Button from "./button";
-import { Plus, Filter } from "lucide-react";
+import { Plus, Filter, SortAsc } from "lucide-react";
 
 const MedicineHeader = () => {
   return (
     <div className="flex justify-between">
       <p className="font-semibold text-3xl">Medicines</p>
       <div className="flex gap-4">
+        <Button Icon={SortAsc}>Sort</Button>
         <Button Icon={Filter}>Filter</Button>
         <Button Icon={Plus}>Add medicine</Button>
       </div>
