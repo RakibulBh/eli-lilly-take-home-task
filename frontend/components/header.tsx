@@ -11,12 +11,20 @@ const Header = ({
 }) => {
   // TODO: implement fetch avarage price
   const [medicineCount, setMedicineCount] = useState<number>(0);
+  const [avarage, setAvarage] = useState<number>(0);
 
   useEffect(() => {
     axios
-      .get("http://0.0.0.0:8000/medicines/")
+      .get("http://0.0.0.0:8000/medicines")
       .then((response) => setMedicineCount(response.data.medicines.length))
       .catch((response) => setMedicineCount(0));
+  }, []);
+
+  useEffect(() => {
+    axios
+      .get("http://0.0.0.0:8000/average")
+      .then((response) => setAvarage(response.data.average.toFixed(2)))
+      .catch((response) => setAvarage(0));
   }, []);
 
   return (
@@ -24,7 +32,7 @@ const Header = ({
       <div className="w-[30rem] space-y-8">
         <div className="flex justify-between">
           <Statistic value={medicineCount} desc="Medicines" />
-          <Statistic value="£240" desc="avg. price" />
+          <Statistic value={`£${avarage}`} desc="avg. price" />
         </div>
         <SearchBar setSearchTerm={setSearchTerm} />
       </div>

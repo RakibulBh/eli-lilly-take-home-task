@@ -137,7 +137,7 @@ def get_avarage_med_price():
         for med in data["medicines"]:
             count += 1
             price += med['price']
-        return (price/count)
+        return {"average": (price/count)}
     return {"error": "Medicine not found"}
 
 # Add your average function here
