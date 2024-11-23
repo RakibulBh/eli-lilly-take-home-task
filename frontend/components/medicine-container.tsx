@@ -13,7 +13,7 @@ const MedicineContainer = () => {
   });
 
   return (
-    <div className="grid grid-rows-3 gap-2">
+    <div className="flex-1 grid grid-rows-3 gap-2">
       {medicines.map((medicine) => (
         <MedicineComponent name={medicine.name} price={medicine.price} />
       ))}
