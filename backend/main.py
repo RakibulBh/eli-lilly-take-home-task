@@ -125,6 +125,21 @@ def delete_med(name: str = Form(...)):
                 return {"message": f"Medicine deleted successfully with name: {name}"}
     return {"error": "Medicine not found"}
 
+@app.get("/average")
+def get_avarage_med_price():
+    """
+    This function reads the data.json file and returns the avarage price of every medicine.
+    """
+    count = 0
+    price = 0
+    with open('data.json') as meds:
+        data = json.load(meds)
+        for med in data["medicines"]:
+            count += 1
+            price += med['price']
+        return (price/count)
+    return {"error": "Medicine not found"}
+
 # Add your average function here
 
 if __name__ == "__main__":
