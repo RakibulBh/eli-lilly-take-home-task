@@ -4,7 +4,11 @@ import Statistic from "./statistic";
 import SearchBar from "./search-bar";
 import axios from "axios";
 
-const Header = () => {
+const Header = ({
+  setSearchTerm,
+}: {
+  setSearchTerm: (char: string) => void;
+}) => {
   // TODO: implement fetch avarage price
   const [medicineCount, setMedicineCount] = useState<number>(0);
 
@@ -22,7 +26,7 @@ const Header = () => {
           <Statistic value={medicineCount} desc="Medicines" />
           <Statistic value="£240" desc="avg. price" />
         </div>
-        <SearchBar />
+        <SearchBar setSearchTerm={setSearchTerm} />
       </div>
     </div>
   );
