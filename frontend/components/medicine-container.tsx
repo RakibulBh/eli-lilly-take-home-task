@@ -1,3 +1,4 @@
+"use client";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import MedicineComponent from "./medicine-component";
@@ -9,14 +10,16 @@ const MedicineContainer = () => {
   useEffect(() => {
     axios
       .get("http://0.0.0.0:8000/medicines/")
-      .then((response) => setMedicines(response.data));
-  });
+      .then((response) => setMedicines(response.data.medicines))
+      .catch((response) => setMedicines([]));
+  }, []);
 
   return (
-    <div className="flex-1 grid grid-rows-3 gap-2">
-      {medicines.map((medicine) => (
-        <MedicineComponent name={medicine.name} price={medicine.price} />
-      ))}
+    <div className="grid grid-cols-3 gap-2 max-h-64 overflow-y-auto">
+      {medicines &&
+        medicines.map((medicine) => (
+          <MedicineComponent name={medicine.name} price={medicine.price} />
+        ))}
     </div>
   );
 };
