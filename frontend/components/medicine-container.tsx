@@ -8,9 +8,11 @@ import EditMedicineDialog from "./edit-medicine-dialog";
 const MedicineContainer = ({
   searchTerm,
   sortAsc,
+  minMax,
 }: {
   searchTerm: string;
   sortAsc: boolean;
+  minMax: [number, number];
 }) => {
   const [medicines, setMedicines] = useState<Medicine[]>([]);
   const [filteredMedicines, setFilteredMedicines] = useState<Medicine[]>([]);
@@ -32,6 +34,14 @@ const MedicineContainer = ({
       )
     );
   }, [searchTerm]);
+
+  useEffect(() => {
+    setFilteredMedicines(
+      medicines.filter(
+        (medicine) => medicine.price <= minMax[1] && medicine.price >= minMax[0]
+      )
+    );
+  }, [minMax]);
 
   useEffect(() => {
     sortAsc
