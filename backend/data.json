@@ -1,15 +1,1 @@
-{
-  "medicines": [
-    { "name": "Elixirium", "price": 5.99 },
-    { "name": "Cureallium", "price": 7.49 },
-    { "name": "Healix", "price": 10.0 },
-    { "name": "Restorix", "price": 12.99 },
-    { "name": "", "price": 15.49 },
-    { "name": "Tonicast", "price": 9.0 },
-    { "name": "Allevium", "price": 200.0 },
-    { "name": "Synthomaxi", "price": 14.99 },
-    { "name": "Magicure", "price": 200.0 },
-    { "name": "New Medicine", "price": 20.0 },
-    { "name": "Best medicine", "price": 200000.0 }
-  ]
-}
+{"medicines": [{"name": "Elixirium", "price": 5.99}, {"name": "Cureallium", "price": 7.49}, {"name": "Restorix", "price": 12.99}, {"name": "", "price": 15.49}, {"name": "Tonicast", "price": 9.0}, {"name": "Allevium", "price": 200.0}, {"name": "Synthomaxi", "price": 14.99}, {"name": "Magicure", "price": 200.0}, {"name": "New Medicine", "price": 20.0}, {"name": "Best medicine", "price": 200000.0}]}
