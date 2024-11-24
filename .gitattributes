@@ -1,4 +1,4 @@
-venv/* linguist-vendored
+backend/venv/* linguist-vendored
 *.py linguist-detectable=true
 *.ts linguist-detectable=true
 *.tsx linguist-detectable=true
