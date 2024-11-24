@@ -7,7 +7,7 @@ import { useState } from "react";
 
 export default function Home() {
   const [searchTerm, setSearchTerm] = useState<string>("");
-  const [sortAsc, setSortAsc] = useState<boolean>(true);
+  const [sortAsc, setSortAsc] = useState<boolean>(false);
   const [minMax, setMinMax] = useState<[number, number]>([
     0,
     Number.POSITIVE_INFINITY,

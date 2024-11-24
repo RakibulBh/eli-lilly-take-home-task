@@ -12,7 +12,7 @@ import { Input } from "./ui/input";
 import { useState } from "react";
 import { Label } from "@radix-ui/react-label";
 import { toast } from "sonner";
-import { Filter, Plus } from "lucide-react";
+import { Filter } from "lucide-react";
 
 const FilterDialog = ({
   setMinMax,

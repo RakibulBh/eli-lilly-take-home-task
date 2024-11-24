@@ -1,9 +1,5 @@
 # Lilly Technical Challenge Documentation Template
 
-_This documentation template serves as a place for you to discuss how you approached this challenge, any issues you faced & how you overcame them, or any other points that you feel would be relevant for the interviewers to know. The text in italics is here to guide you - feel free to remove it once you fill out each section!_
-
-**_Not every section in this document is required. This is just a template to help get you started. Feel free to add or remove sections as you feel necessary._**
-
 ## Approach
 
 The key objective here is to display the data in a "user friendly" way, which means that my focus of developing the whole application will be to make it as user friendly as possible.
@@ -24,8 +20,6 @@ Commit protocols used:
 - style: Formatting
 
 ## Objectives - Innovative Solutions
-
-_For the challenge objectives, did you do anything in a particular way that you want to discuss? Is there anything you're particularly proud of that you want to highlight? Did you attempt some objectives multiple times, or go back and re-write particular sections of code? If so, why? Use this space to document any key points you'd like to tell us about._
 
 I have use Next.js, React.js, TailwindCSS which are all frameworks used to help me develop the applicatiom much faster, giving me more type to solve the problem and time saved on development, re usable components in react allow me to not use diplicated code and keep things as efficient as possible by creating components which could be re-used for various different use cases.
 
@@ -58,12 +52,18 @@ During my development process I was using the 'frontend/design' branch as my mai
 
 When adding a medicine and submitting, the page does not refresh and dialog does not close and no messages are shown to the user that a medicine has been created. To fix this I just have to use more states.
 
-## Evaluation
+I did not know how to sort an array based on a property using the .sort() javascript function so I looked it up on google and found W3Schools page which taught me, I ended up developing the sort feature fairly easily!
 
-_How did you feel about the challenge overall? Did some parts go better than others? Did you run out of time? If you were to do this again, and were given more time, what would you do differently?_
+setFilteredMedicines(
+filteredMedicines.sort((a, b) => b.price - a.price)
+);
+
+## Evaluation
 
 I feel like I did great, I tried my best to list out as many use cases as possible and handle any potential errors that could occur like entering a wrong data type for form data, entering null or empty values, requests failing, error handling is essential to keep any app running and keep a smooth experience for the user, however I would say that the sort/filter functions definitely took much longer than rendering the UI.
 
 If I had more time I would focus more on the styling, especially the responsiveness of the application so it can be used in any device and still having the ui looking great. A lot of the time I had to fetch the same data multiple times which is quite inefficient, to fix this I would use a state mangement library to have a state that any component would have access to, this would reduce "prop drilling" which can make my components confusing and harder to track.In addition, the prupose of React is to create re-usable components that have one specific function, however some of my components have multi-purpose I'd say, so I would definitely refactor some code.
 
 There are a lot of opporutnities to make this application as efficient as possible one use case would not rendering the dialog component for each medicine, but only render it once if a medicine has been clicked and pass the medicine data on the dialog, I would definitely spend more time making my code efficient, readable and maintainable and adding comments.
+
+I would focus a lot more on adding loading states, however I ran out of time and I had more deadlines therefore I left that for last and was unable to conplete it.
